@@ -1,0 +1,25 @@
+{
+  "name": "type-challenges",
+  "version": "1.0.0",
+  "description": "floow https://github.com/type-challenges/type-challenges to practice typeScript",
+  "main": "rollup.config.js",
+  "scripts": {
+    "ct": "node ./scripts/create-template/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiangsongyang/type-challenges.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jiangsongyang/type-challenges/issues"
+  },
+  "homepage": "https://github.com/jiangsongyang/type-challenges#readme",
+  "devDependencies": {
+    "@type-challenges/utils": "^0.1.1",
+    "inquirer": "^8.2.2",
+    "typescript": "^4.6.3"
+  }
+}
