@@ -1,32 +1,24 @@
 /*
-  13 - Hello World
+  11 - Tuple to Object
   -------
-  by Anthony Fu (@antfu) #热身 
+  by sinoon (@sinoon) #easy 
   
-  ### 题目
+  ### Question
   
-  Hello, World!
+  Give an array, transform into an object type and the key/value must in the given array.
   
-  这个简单的提问希望让你可以快速上手 Type Challenges。在这里，我们使用了一些神奇的技巧让 TypeScript 通过自身的类型系统来实现自动判题。 
-  
-  在这个挑战中，你需要修改下方的代码使得测试通过（使其没有类型错误）。
+  For example
   
   ```ts
-  // 期望是一个 string 类型
-  type HelloWorld = any
+  const tuple = ['tesla', 'model 3', 'model X', 'model Y'] as const
+  
+  type result = TupleToObject<typeof tuple> // expected { tesla: 'tesla', 'model 3': 'model 3', 'model X': 'model X', 'model Y': 'model Y'}
   ```
   
-  ```ts
-  // 你需要使得如下这行不会抛出异常
-  type test = Expect<Equal<HelloWorld, string>>
-  ```
-  
-  点击上方的 `接受挑战` 开始编码！旅途愉快！
-  
-  > 在 Github 上查看：https://tsch.js.org/13/zh-CN
+  > View on GitHub: https://tsch.js.org/11
 */
 
-/* _____________ 你的代码 _____________ */
+/* _____________ Your Code Here _____________  */
 
 /**
  * 
@@ -36,6 +28,6 @@
  * 
  */
 
-type TupleToObject<T extends readonly any[]> = {
+export type TupleToObject<T extends readonly any[]> = {
   [k in T[number]]: k;
 };
