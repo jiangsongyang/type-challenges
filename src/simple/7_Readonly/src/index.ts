@@ -1,32 +1,21 @@
 /*
-  7 - Readonly
+  11 - Tuple to Object
   -------
-  by Anthony Fu (@antfu) #easy #built-in #readonly #object-keys
+  by sinoon (@sinoon) #easy 
   
   ### Question
   
-  Implement the built-in `Readonly<T>` generic without using it.
-  
-  Constructs a type with all properties of T set to readonly, meaning the properties of the constructed type cannot be reassigned.
+  Give an array, transform into an object type and the key/value must in the given array.
   
   For example
   
   ```ts
-  interface Todo {
-    title: string
-    description: string
-  }
+  const tuple = ['tesla', 'model 3', 'model X', 'model Y'] as const
   
-  const todo: MyReadonly<Todo> = {
-    title: "Hey",
-    description: "foobar"
-  }
-  
-  todo.title = "Hello" // Error: cannot reassign a readonly property
-  todo.description = "barFoo" // Error: cannot reassign a readonly property
+  type result = TupleToObject<typeof tuple> // expected { tesla: 'tesla', 'model 3': 'model 3', 'model X': 'model X', 'model Y': 'model Y'}
   ```
   
-  > View on GitHub: https://tsch.js.org/7
+  > View on GitHub: https://tsch.js.org/11
 */
 
 /* _____________ 你的代码 _____________ */
