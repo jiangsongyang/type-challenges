@@ -1,33 +1,33 @@
 /*
   13 - Hello World
   -------
-  by Anthony Fu (@antfu) #热身 
+  by Anthony Fu (@antfu) #warm-up 
   
-  ### 题目
+  ### Question
   
   Hello, World!
   
-  这个简单的提问希望让你可以快速上手 Type Challenges。在这里，我们使用了一些神奇的技巧让 TypeScript 通过自身的类型系统来实现自动判题。 
+  In Type Challenges, we use the type system itself to do the assertion. 
   
-  在这个挑战中，你需要修改下方的代码使得测试通过（使其没有类型错误）。
+  For this challenge, you will need to change the following code to make the tests pass (no type check errors).
   
   ```ts
-  // 期望是一个 string 类型
+  // expected to be string
   type HelloWorld = any
   ```
   
   ```ts
-  // 你需要使得如下这行不会抛出异常
+  // you should make this work
   type test = Expect<Equal<HelloWorld, string>>
   ```
   
-  点击上方的 `接受挑战` 开始编码！旅途愉快！
+  Click the `Take the Challenge` button to start coding! Happy Hacking!
   
-  > 在 Github 上查看：https://tsch.js.org/13/zh-CN
+  > View on GitHub: https://tsch.js.org/13
 */
 
 
-/* _____________ 你的代码 _____________ */
+/* _____________ Your Code Here _____________ */
 
 export type HelloWorld = any
 

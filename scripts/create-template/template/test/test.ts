@@ -1,4 +1,4 @@
-/* _____________ 测试用例 _____________ */
+/* _____________ Test Cases _____________ */
 import {  } from '@type-challenges/utils'
 import { HelloWorld } from '../src'
 
