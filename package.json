@@ -10,7 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/jiangsongyang/type-challenges.git"
   },
-  "keywords": ["typescript"],
+  "keywords": [
+    "typescript"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
