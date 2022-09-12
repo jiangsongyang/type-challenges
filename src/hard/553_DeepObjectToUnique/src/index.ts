@@ -39,7 +39,7 @@
 
 /* _____________ Your Code Here _____________ */
 
-export type HelloWorld = any
+export type DeepObjectToUniq<O extends object> = any
 
 
 
