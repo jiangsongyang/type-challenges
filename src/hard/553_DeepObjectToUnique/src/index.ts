@@ -36,13 +36,11 @@
   > View on GitHub: https://tsch.js.org/553
 */
 
-
 /* _____________ Your Code Here _____________ */
 
-export type DeepObjectToUniq<O extends object> = any
-
-
-
-
-
-
+export type DeepObjectToUniq<
+  O extends object,
+  U extends readonly any[] = [O]
+> = {
+  [J in keyof O]: O[J] extends object ? DeepObjectToUniq<O[J], [...U, J]> : O[J]
+} & { [K in symbol]: U }
