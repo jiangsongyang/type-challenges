@@ -13,3 +13,18 @@ type UniqBar = DeepObjectToUniq<Bar>
 
 declare let foo: Foo
 declare let uniqFoo: UniqFoo
+
+uniqFoo = foo
+foo = uniqFoo
+
+type cases = [
+  IsFalse<Equal<UniqQuz, Quz>>,
+  IsFalse<Equal<UniqFoo, Foo>>,
+  IsTrue<Equal<UniqFoo['foo'], Foo['foo']>>,
+  IsTrue<Equal<UniqFoo['bar']['quz'], Foo['bar']['quz']>>,
+  IsFalse<Equal<UniqQuz, UniqFoo['baz']>>,
+  IsFalse<Equal<UniqFoo['bar'], UniqFoo['baz']>>,
+  IsFalse<Equal<UniqBar['baz'], UniqFoo['baz']>>,
+  IsTrue<Equal<keyof UniqBar['baz'], keyof UniqFoo['baz']>>,
+  IsTrue<Equal<keyof Foo, keyof UniqFoo & string>>,
+]
