@@ -1,5 +1,5 @@
 /* _____________ Test Cases _____________ */
-import { HelloWorld } from '../src'
+import { DeepObjectToUniq } from '../src'
 import type { Equal, IsFalse, IsTrue } from '@type-challenges/utils'
 
 type Quz = { quz: 4 }
