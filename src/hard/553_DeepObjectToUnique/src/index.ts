@@ -40,11 +40,11 @@
 
 export type DeepObjectToUniq<
   O extends object,
-  Path extends Array<unknown> = [O]
-> = O extends Record<keyof any, any>
+  Path extends any[] = [O]
+> = O extends Record<string, any>
   ? {
-      [K in keyof O]: DeepObjectToUniq<O[K], [...Path, K]>
+      [key in keyof O]: DeepObjectToUniq<O[key], [...Path, key]>
     } & {
-      [K in symbol]: Path
+      [key in symbol]: Path
     }
   : O
