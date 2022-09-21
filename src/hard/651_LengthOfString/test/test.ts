@@ -2,6 +2,8 @@
 import { LengthOfString } from '../src'
 import type { Equal, IsTrue } from '@type-challenges/utils'
 
+type a = LengthOfString<'1212312321'>
+
 type cases = [
   IsTrue<Equal<LengthOfString<''>, 0>>,
   IsTrue<Equal<LengthOfString<'1'>, 1>>,

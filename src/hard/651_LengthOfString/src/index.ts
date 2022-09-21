@@ -16,13 +16,9 @@
   > View on GitHub: https://tsch.js.org/651
 */
 
-
 /* _____________ Your Code Here _____________ */
 
-export type LengthOfString<S extends string> = number
-
-
-
-
-
-
+export type LengthOfString<
+  S extends string,
+  R extends number[] = []
+> = S extends `${string}${infer F}` ? LengthOfString<F, [...R, 1]> : R['length']
