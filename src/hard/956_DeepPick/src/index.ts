@@ -38,7 +38,33 @@
 
 /* _____________ Your Code Here _____________ */
 
-export type DeepPick = any
+type UnionToIntersection<U> = (U extends U
+  ? (args: U) => void
+  : never) extends (args: infer R) => void
+    ? R
+    : never;
+
+type DeepPickHelp<O extends Record<string, any>, K> = K extends K
+  ? K extends `${infer FirstKey}.${infer RestKey}`
+    ? FirstKey extends keyof O
+      ? {
+        [Key in keyof O as Key extends FirstKey ? Key : never]: DeepPickHelp<O[Key], RestKey>
+      }
+      : never
+    : K extends keyof O 
+      ? {
+        [Key in keyof O as Key extends K ? Key : never]: O[Key]
+      }
+      : never
+  : never
+
+
+  export type DeepPick<O extends Record<string, any>, K, SK = K> = [K] extends [''] 
+  ? unknown
+  : '' extends K
+    ? UnionToIntersection<DeepPickHelp<O, Exclude<SK, ''>>> & unknown
+    : UnionToIntersection<DeepPickHelp<O, K>>
+
 
 
 
