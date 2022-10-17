@@ -20,7 +20,13 @@
 
 /* _____________ Your Code Here _____________ */
 
-export type IsPalindrome<T> = any
+type Reverse<T extends string> = T extends `${infer First}${infer Rest}`
+  ? `${Reverse<Rest>}${First}`
+  : T
+
+export type IsPalindrome<T extends string | number> = `${T}` extends Reverse<`${T}`>
+  ? true
+  : false
 
 
 
